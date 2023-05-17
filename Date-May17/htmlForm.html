@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=512&id=0H8GbKmUw6Pt&format=png" type="image/x-icon">
+</head>
+
+<body>
+   
+   
+    <form>
+        <label for="name">Enter Name:</label>
+        <input type="text" name="Name" id="name" placeholder="Enter Name">
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter email">
+        <br>
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Enter Age">
+        <br>
+        <fieldset>
+            <legend>Sex:</legend>
+            <label for="male">Male</label>
+            <input type="radio" name="sex" id="male" value="male">
+            <label for="female">Female</label>
+            <input type="radio" name="sex" id="female" value="female">
+        </fieldset>
+        
+        <fieldset>
+            <legend>Devices:</legend>
+            <label for="mobile">Mobile</label>
+            <input type="checkbox" name="mobile" id="mobile" value="mobile">
+            <label for="laptop">Laptop</label>
+            <input type="checkbox" name="laptop" id="laptop" value="laptop">
+            <label for="desktop">Desktop</label>
+            <input type="checkbox" name="desktop" id="desktop" value="desktop">
+        </fieldset>
+
+        <label for="mobileNumber">Enter mobile number:</label>
+        <input type="tel" name="mobileNumber" id="mobileNumber" placeholder="Enter mobile number">
+        <br>
+        <label for="file">Enter file:</label>
+        <input type="file" name="file" id="file">
+        <br>
+        <label for="color">Set Color:</label>
+        <input type="color" name="color" id="color">
+        <br>
+        <label for="date"></label>
+        <input type="date" name="date" id="date">
+        <br>
+        <label for="setRange">Set:</label>
+        <input type="range" name="range" id="setRange"  min="1" max="100">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
