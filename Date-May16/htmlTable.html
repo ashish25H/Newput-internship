@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=1x&id=Rdp3AydLFY2A&format=png" type="image/x-icon">
+    <style>
+        table,th,td{
+            border: 1px outset black;
+            border-collapse: collapse;
+        }
+        
+        table{
+            background-color: aquamarine;
+        }
+        tr:nth-child(even){
+            background-color: aqua;
+        }
+        th:nth-child(even),td:nth-child(even){
+            background-color: aqua;
+        }
+        th,td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>Super Hero</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Power/100</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Thor</td>
+                <td>150</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>Ironman</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>Batman</td>
+                <td>50</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Superman</td>
+                <td>40</td>
+                <td>98</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <!-- <tr>
+                <td>Full Power</td>
+            </tr> -->
+        </tfoot>
+    </table>
+
+    <table>
+        <caption>Marks Table</caption>
+        <thead>
+            <tr>
+                <th>Subject Name</th>
+                <th>Marks</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Math</td>
+                <td>80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>90</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td>Chemitry</td>
+                <td>70</td>
+                <td>B</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total Marks : </td>
+                <td colspan="2">320</td>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+
+    <table style="width: 100%;">
+        <caption>Copy Table</caption>
+        <thead>
+            <tr>
+                <th style="width: 10%;">Subject Name</th>
+                <th>Marks</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr style="height: 90px;">
+                <td>Math</td>
+                <td>80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td>80</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td>90</td>
+                <td>A+</td>
+            </tr>
+            <tr>
+                <td>Chemitry</td>
+                <td>70</td>
+                <td>B</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Total Marks : </td>
+                <td colspan="2">320</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
