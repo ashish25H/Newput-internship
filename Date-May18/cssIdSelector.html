@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Selector</title>
+    <style>
+        #button1 {
+            background-color: aquamarine;
+            font-size: 20px;
+        }
+
+        #button2 {
+            background-color: bisque;
+            font-size: 20px;
+        }
+
+        #button {
+            background-color: red;
+            font-size: 20px;
+        }
+        #home,#about{                      /* grouping */
+            color: blueviolet;
+            font-size: 18px;
+        }
+        #para1{
+            color: coral;
+            background-color: aqua;
+            padding: 10px;
+            margin: 10px;
+        }
+        #para2{
+            color: brown;
+            background-color: azure;
+            padding: 10px;
+            margin: 10px;
+        }
+        #heading1{
+            color: rgb(234, 196, 138);
+        }
+        #heading2{
+            color: rgb(11, 153, 106);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li id="home">Home</li>
+                <li id="about">About</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- if i give multiple id to an element then it won't apply any style -->
+    <!-- <button id="button button1">Button 1</button> -->
+
+    <!-- if i give same id to multiple elements then it works fine but its not a good practice -->
+    <!-- <button id="button">Button 1</button>
+    <button id="button">Button 2</button> -->
+
+    <button id="button1">Button 1</button>
+    <button id="button2">Button 2</button>
+
+    <div id="para1">
+        <h1 id="heading1">Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, molestiae eligendi officiis omnis perferendis
+            labore ipsa earum dolor dolore ex aliquam non facere quo beatae tempora voluptates quos ea excepturi.</p>
+    </div>
+
+    <div id="para2">
+        <h1 id="heading2">Heading 2</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, voluptates sint, neque et maxime ducimus
+            placeat, dolores nemo voluptate labore exercitationem laudantium odio. Mollitia dolor amet, dolorem ratione
+            illo quo, expedita veritatis nam nemo obcaecati doloremque fugit consequatur sed maxime.</p>
+    </div>
+
+
+</body>
+
+</html>

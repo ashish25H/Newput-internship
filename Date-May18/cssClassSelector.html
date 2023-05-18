@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Selector</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 180px;
+            background-color: aqua;
+            padding: 10px;
+            margin: 10px;
+        }
+        .check{
+            background-color: red;
+            color: #043f3f;
+        }
+        .check2{
+            color: #16c73f;
+            /* background-color: #31c0c0; */
+        }
+        p.center{                     /* for specific element */     
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box check check2">
+        <h1>Box 1</h1>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nisi. Soluta, magnam laudantium eveniet quibusdam ipsa maiores quod natus eligendi.</p>
+    </div>
+    <div class="check box">
+        <h1 class="center">Box 2</h1>  <!--not apply on h1 tag-->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nisi. Soluta, magnam laudantium eveniet quibusdam ipsa maiores quod natus eligendi.</p>
+    </div>
+    <div class="box">
+        <h1>Box 3</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nisi. Soluta, magnam laudantium eveniet quibusdam ipsa maiores quod natus eligendi.</p>
+    </div>
+    <div class="box">
+        <h1>Box 4</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nisi. Soluta, magnam laudantium eveniet quibusdam ipsa maiores quod natus eligendi.</p>
+    </div>
+    <div class="box">
+        <h1>Box 5</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, nisi. Soluta, magnam laudantium eveniet quibusdam ipsa maiores quod natus eligendi.</p>
+    </div>
+</body>
+</html>
