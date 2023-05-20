@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        .img {
+            position: absolute;
+            top: 0;
+
+            z-index: -1;
+        }
+        .text {
+            z-index: 1;
+            color: aqua;
+        }
+
+        .container {
+            max-width: 400px;
+            text-align: left;
+        }
+        .heading {
+            font-size: 3.2em;
+            color: bisque;
+        }
+        .para{
+            color: #f0ed3e;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="img"
+            src="https://images.unsplash.com/photo-1683984230239-4b685398d50e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="nature image">
+
+        <div class="text">
+            <h1 class="heading">Brahmastra</h1>
+            <p class="para">In Hindu Mythology, the Brahmastra (IAST: Brahmāstra) is an astra (projectile weapon) that is said to be
+                able to destroy the whole universe, capable of destroying creation and vanquishing all beings.</p>
+        </div>
+    </div>
+</body>
+
+</html>

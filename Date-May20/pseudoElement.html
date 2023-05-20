@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements</title>
+    <style>
+        p::first-line {
+            color: blue;
+        }
+
+        p::first-letter {
+            font-size: 4em;
+            color: brown;
+        }
+
+        h1::before {
+            content: url(https://media.tenor.com/waEsOp1zmQEAAAAM/dancing-dance.gif);
+        }
+
+        h1::after {
+            content: url(https://media.tenor.com/ChBbVqQzpgsAAAAM/hat-spider.gif);
+        }
+        ::selection{
+            background-color: rgb(231, 231, 5);
+            color: rgb(176, 174, 174);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heading</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, quo similique? Doloremque consequuntur quae
+        quia tempore quibusdam, ipsa rerum qui eaque cupiditate, ex nesciunt eum soluta reiciendis itaque alias
+        reprehenderit molestias aliquid neque. Ab adipisci incidunt, reprehenderit quibusdam quo cupiditate!</p>
+</body>
+
+</html>
