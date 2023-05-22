@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Background</title>
+    <style>
+        .container{
+            background-image: url(https://img.icons8.com/?size=1x&id=0H8GbKmUw6Pt&format=png),url(https://images.unsplash.com/photo-1684265927641-3fbdcb5724b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDR8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+            background-size: 100px, auto;
+            background-position: left top , right top;
+            background-repeat: no-repeat, no-repeat;
+            padding: 60px 40px;
+            color: #32df1f;
+            background-color:antiquewhite;
+
+        }
+        .div2{
+            width: 350px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            background-image: url(https://images.unsplash.com/photo-1684282806798-2e71b3aa3a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDN8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        .div3{
+            width: 350px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 20px;
+            background-image: url('https://images.unsplash.com/photo-1680696366952-7992c2da60fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDF8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .box{
+            border: 5px solid black;
+            padding:30px;
+            margin: 30px;
+        }
+        .div4{
+            background-image: url('https://images.unsplash.com/photo-1684171874030-d7756e7787db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60');
+            background-repeat: no-repeat;
+            background-origin: padding-box;
+            color: antiquewhite;
+        }
+        .div5{
+            background-image: url('https://images.unsplash.com/photo-1684171874030-d7756e7787db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60');
+            background-repeat: no-repeat;
+            background-origin:border-box;
+            color: antiquewhite;
+        }
+        .div6{
+            background-image: url('https://images.unsplash.com/photo-1684171874030-d7756e7787db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60');
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>heading</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nobis accusantium id error magnam, eius
+            iure natus dolore qui deleniti dignissimos eligendi temporibus fugit voluptate vel unde voluptatibus, sit
+            vitae!</p>
+
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos laborum ex aut totam vel ratione
+            ducimus possimus reiciendis delectus! Iure!</p>
+    </div>
+
+    <div class="div2">
+        <h1>background-size:cover</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At suscipit beatae iusto illum, facilis quo quidem dolore ea commodi libero possimus ut veritatis est cumque, ratione, sit exercitationem. In, consequatur aliquam. Reprehenderit ducimus rerum minima molestiae, numquam cumque inventore provident facilis aut eius voluptates iure, laborum assumenda. Facere, et corrupti?</p>
+    </div>
+
+    <div class="div3">
+        <h1>background-size: contain</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, repellendus quos aliquam voluptate maxime accusantium iste ex saepe modi obcaecati optio corrupti. Veniam possimus tempore doloremque distinctio, saepe vitae et culpa, unde dicta debitis consequatur? Eum eaque aspernatur qui harum ipsam consectetur asperiores. Ab cum neque, beatae ea unde libero!</p>
+    </div>
+
+
+
+    <div class="div4 box">
+        <h1>background-origin: padding-box</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum debitis a libero officiis nisi sunt in omnis commodi corrupti, voluptas earum beatae recusandae iusto tempora culpa iure laudantium et vitae eius! Doloribus, distinctio vel. Totam similique facilis in accusantium necessitatibus!</p>
+    </div>
+
+    <div class="div5 box">
+        <h1>background-origin:border-box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam suscipit fuga recusandae nisi, asperiores sed tempore reiciendis ipsam. Veritatis corporis maxime soluta maiores neque tempore delectus dignissimos iure, atque sunt odio quia voluptas sequi dolores non illo aperiam beatae necessitatibus.</p>
+    </div>
+
+    <div class="div6 box">
+        <h1> background-origin: content-box</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti vitae, voluptates eligendi quas nihil aliquid repellendus quod aliquam modi natus optio aut ea, maxime rerum quaerat quasi illum ipsa impedit! Et omnis sapiente labore cupiditate nesciunt ratione expedita eum provident!</p>
+    </div>
+</body>
+
+</html>
