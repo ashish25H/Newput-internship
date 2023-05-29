@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable in JS</title>
+</head>
+
+<body>
+    <h1>
+        Variable Naming
+    </h1>
+    <ul>
+        <li>The name must contain only letter,digits or the symbols & and _</li>
+        <li>The first character must not be a digit.</li>
+    </ul>
+
+
+    <script>
+        // let user = 'John';
+        // let age = 30;
+        // let message = 'Hello';
+
+        // alert(`${user} ${age} ${message}`);
+
+        let user = 'Tony',
+            age = 80,
+            message = 'Hello';
+
+
+        alert(`${user} ${age} ${message}`);
+
+        // data types
+
+        console.log(typeof undefined); // "undefined"
+
+        console.log(typeof 0); // "number"
+
+        console.log(typeof 10n); // "bigint"
+
+        console.log(typeof true); // "boolean"
+
+        console.log(typeof "foo"); // "string"
+
+        console.log(typeof Symbol("id")); // "symbol"
+
+        console.log(typeof Math); // "object"  (1)
+
+        console.log(typeof null); // "object"  (2)
+
+        console.log(typeof alert); // "function"  (3)
+
+
+        let name = "Ilya";
+
+        alert(`hello ${1}`); // ?
+
+        alert(`hello ${"name"}`); // ?
+
+        alert(`hello ${name}`); // ?
+    </script>
+</body>
+
+</html>
