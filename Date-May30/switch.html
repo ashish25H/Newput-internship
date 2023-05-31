@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch</title>
+</head>
+
+<body>
+    <h1>Switch Statement</h1>
+
+    <script>
+        let task = prompt('Enter your choice \n 1-Addition\n2-Subtraction\n3-Multiplication\n4-Division');
+
+        switch (task) {
+            case '1': let num1 = +prompt('Enter first number');
+                let num2 = +prompt('Enter second number');
+                alert(num1 + num2);
+                break;
+
+            case '2': let num3 = +prompt('Enter first number');
+                let num4 = +prompt('Enter second number');
+                alert(num3 - num4);
+                break;
+
+            case '3': let num5 = +prompt('Enter first number');
+                let num6 = +prompt('Enter second number');
+                alert(num5 * num6);
+                break;
+                
+            case '4': let num7 = +prompt('Enter first number');
+                let num8 = +prompt('Enter second number');
+                alert(num7 / num8);
+                break;
+
+            default: prompt('Enter a valid number');
+                break;
+        }
+    </script>
+</body>
+
+</html>
