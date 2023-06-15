@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        .clock{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="clock" id="clock">
+        <p class="hour" id="hour"></p> <p>:</p> <p class="min" id="min"></p> <p>:</p> <p class="sec" id="sec"></p>
+        <!-- <span id="clock"></span> -->
+    </div>
+
+
+    <script>
+
+        const hour = document.getElementById('hour');
+        const min = document.getElementById('min');
+        const sec = document.getElementById('sec');
+
+
+        function setTime(){
+            let time = new Date();
+            // hour.appendChild(document.createTextNode(time.getHours()));
+            // hour.innerText = time.getHours();
+            // min.innerText = time.getMinutes();
+            // sec.innerText = time.getSeconds();
+            document.getElementById('clock').innerText = time.toLocaleTimeString();
+            // console.log(time.toLocaleTimeString());
+        }
+
+        setInterval(setTime, 1000);
+        
+    </script>
+</body>
+</html>

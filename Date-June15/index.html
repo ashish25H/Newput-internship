@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .box {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #333232;
+            margin: 10px;
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #greenyellow {
+            background-color: greenyellow;
+        }
+
+        #aqua {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="div">One</div>
+    <div id="div">Two</div>
+    <div id="div">Three</div>
+
+    <div id="appendElement"></div> -->
+    <div class="buttons">
+        <div class="box" id="red"></div>
+        <div class="box" id="yellow"></div>
+        <div class="box" id="greenyellow"></div>
+        <div class="box" id="aqua"></div>
+    </div>
+
+    <script>
+        // let div = document.getElementById('div');
+        // console.log(div);
+
+        // let temp = document.getElementById('appendElement');
+        // temp.appendChild(document.createTextNode('Some text'));
+
+        // temp.setAttribute('class', 'firstClass');
+        // temp.setAttribute('title', 'divTitle');
+        // console.log(temp);
+
+        const box = document.querySelectorAll('.box');
+        const body = document.querySelector('body');
+
+        box.forEach(function (item) {
+            item.addEventListener('click', function (e) {
+                console.log(e);
+                console.log(e.target);
+                body.style.backgroundColor = e.target.id;
+            });
+        })
+
+
+    </script>
+</body>
+
+</html>
