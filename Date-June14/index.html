@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 400px;
+            background-color: aqua;
+            color: black;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="Heading">changing color using JavaScript Heading H1</h1>
+    <p id="para1"></p>
+    <img id="image1" src="https://images.unsplash.com/photo-1686676844352-bd0f1fdf3465?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="img">
+    
+
+    <button id="btn" onclick="this.style.color = 'red'">Click me</button>
+    <button onclick="this.style.backgroundColor = 'green'">Click me to change BG</button>
+
+
+
+    <div class="box" id="box1">
+
+    </div>
+
+
+    <ul class="list">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
+
+
+
+
+
+
+    <script>
+        let heading = document.getElementById('Heading');
+        heading.style.color = 'red';
+        let para = document.getElementById('para1');
+        para.innerHTML = "This is a text line";
+
+        document.getElementById('image1').src = 'https://images.unsplash.com/photo-1682687219573-3fd75f982217?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60';
+
+        let box = document.getElementById('box1');
+
+        function showtext(){
+            let p = document.createElement('p');
+            let textNode = document.createTextNode('Mouse enter');
+            p.appendChild(textNode);
+
+            box.appendChild(p);
+        }
+
+        function showOutText(){
+            let p = document.createElement('p');
+            p.innerText = 'Mouse out';
+
+            box.appendChild(p);
+        }
+
+        box.addEventListener('mouseenter', showtext);
+        box.addEventListener('mouseout', showOutText)
+
+
+        let list = document.getElementsByTagName('li');
+        console.log(list);
+
+        for(let item of list){
+            item.innerText = 'No text';
+        }
+
+
+        console.log(window.innerHeight);
+        console.log(window.innerWidth);
+        console.log(window.location.hostname);
+        console.log(window.location.pathname);
+    </script>
+</body>
+</html>
