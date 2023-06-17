@@ -2,8 +2,9 @@ const day = document.getElementById('weekDays');
 const date = document.getElementById('date');
 const monthText = document.getElementById('month');
 const yearText = document.getElementById('year');
-const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const dateObj = new Date();
+
+let nav = 0;
+
 
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -20,22 +21,23 @@ for (let item of weekDays) {
 
 
 
-function createCalender(setYear, setMonth) {
+function createCalender() {
 
+    date.innerHTML = '';
 
+    const dt = new Date();
 
-    // const year = dateObj.getFullYear();
-    // const month = dateObj.getMonth();
-
-    let year = setYear;
-    let month = setMonth;
-
-    if(month > 11){
-        month = 0;
-        year += 1;
+    if (nav !== 0) {
+        dt.setMonth(new Date().getMonth() + nav);
     }
 
+    const day = dt.getDate();
+    const month = dt.getMonth();
+    const year = dt.getFullYear();
+
     console.log(`Year ${year} month ${month}`);
+
+    const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     yearText.innerText = year;
     monthText.innerText = monthArray[month];
@@ -52,7 +54,13 @@ function createCalender(setYear, setMonth) {
     function addDate(dateText) {
         let div = document.createElement('div');
         div.innerText = dateText;
-        div.classList.add('dateItem');
+
+        if (dateText === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+            div.classList.add('currentDate');
+        } else {
+            div.classList.add('dateItem');
+        }
+
         date.appendChild(div);
     }
 
@@ -66,4 +74,20 @@ function createCalender(setYear, setMonth) {
 
 }
 
-createCalender(dateObj.getFullYear(), dateObj.getMonth());
+
+
+
+function initButtons() {
+    document.getElementById('nextButton').addEventListener('click', () => {
+        nav++;
+        createCalender();
+    });
+
+    document.getElementById('backButton').addEventListener('click', () => {
+        nav--;
+        createCalender();
+    });
+}
+
+initButtons();
+createCalender();
