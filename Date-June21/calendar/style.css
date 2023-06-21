@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    margin: 0;
+    padding: 0; 
+}
+
+body{
+    background-color: #242B2E;
+    color: #fff;
+   
+}
+
+.calendarBody{
+    display: flex;
+    justify-content: center; 
+    height: 100vh;
+    margin: 20vh 0;  
+}
+
+.dropdownList{
+    background-color: #1f1f1f;
+    height: 512px;
+    padding: 33px 10px;
+}
+
+.dropdownList select{
+    border: none;
+    font-size: 15px;
+    margin-bottom: 50px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.showCurrentDate{
+    display: flex;
+    justify-content: center;
+}
+
+.showCurrentDate button{
+    border: none;
+    border-radius: 10px;
+    background-color: #09d34c;
+    padding: 8px 18px;
+}
+
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+}
+
+.calenderHead{
+    align-items: center;
+    background-color: #09d34c;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 30px;
+    width: 100%;
+}
+
+.calenderHead .monthAndYear{
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.calenderHead .leftAndRightArrow {
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.calenderHead .leftAndRightArrow i:first-child{
+    margin: 0 25px;
+}
+
+.weekDays{
+    align-content: center;
+    background-color: #758283;
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    justify-items: center; 
+}
+
+.gridItem{
+    padding: 20px 25px;
+}
+
+.date{
+    align-content: center;
+    background-color: #1e2122;
+    display: grid;
+    grid-template-columns: repeat(7, 100px);
+    grid-template-rows: repeat(6, auto);
+    /* gap: 5px; */
+    justify-items: center;
+}
+
+.dateItem{
+    padding: 20px 23px;
+}
+
+.dateItem:hover{
+    border-radius: 50%;
+    background-color: rgb(71, 70, 70);
+}
+
+.inactiveDate{
+    color: #757676;
+    padding: 20px 25px;
+    
+}
+
+.currentDate{
+    align-items: center;
+    background-color: #09d34c;
+    border-radius: 50%;
+    color: #f5f9f9;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.sunday{
+    color: #05d34b;
+    padding: 20px 25px;
+    
+}
+
