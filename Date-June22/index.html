@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <title>J-Query</title>
+</head>
+
+<body>
+    <p class="para" id="para1">Hello jQuery</p>
+    <p class="para2">it is para2</p>
+
+    <p class="para3"></p>
+
+
+    <script>
+        //jquery selectors
+        let myElement = $('#para1');
+        let element2 = $('.para2');
+        console.log(myElement);
+        console.log(element2);
+
+        //set inner text of an element
+        myElement.text('changed text');
+        console.log(myElement.text());
+
+        //set html 
+        $('.para3').html('<h1>Heading</h1>');
+
+        //add css
+        $('.para2').css('font-size','30px');
+
+        //remove element
+        $('#para1').remove();
+
+    </script>
+</body>
+
+</html>
