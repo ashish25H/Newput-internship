@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="calendar-body">
+        <div class="dropdown-list">
+            <select name="month-dropdown" id="month-dropdown"></select>
+            <select name="year-dropdown" id="year-dropdown"></select>
+
+            <div class="show-current-date" id="show-current-date">
+                <button>Current Date</button>
+            </div>
+
+        </div>
+
+        <div class="container" id="container">
+            <div class="calender-head">
+                <p class="month-and-year"><span id="month">Month</span> <span id="year">Year</span></p>
+
+                <div class="arrow-buttons">
+                    <i class="fa fa-angle-left" id="back-button"></i>
+
+                    <i class="fa fa-angle-right" id="next-button"></i>
+                </div>
+            </div>
+            <div class="week-days" id="week-days"></div>
+
+            <div class="month-dates" id="month-dates"></div>
+        </div>
+    </div>
+
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
