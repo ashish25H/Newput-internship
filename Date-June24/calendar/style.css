@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+:root{
+    --dropdown-bg-color:#393646;
+    --calendar-head-bg-color:#03C988;
+    --week-days-bg-color:#00337C;
+    --month-dates-bg-color:#1C82AD;
+    --current-date-bg-color:#03C988;
+    --current-date-text-color:#00337C;
+    --sunday-text-color:#03C988;
+    --inactie-date-color:#435B66;
+}
+
 *{
     box-sizing: border-box;
     font-family: 'Montserrat';
@@ -21,6 +33,7 @@ body{
 
 .dropdown-list{
     background-color: #fab150;
+    background-color: var(--dropdown-bg-color);
     height: 510px;
     /* height: 499px; */
     padding: 33px 10px;
@@ -43,7 +56,9 @@ body{
     border: none;
     border-radius: 10px;
     background-color: #fedebf;
+    background-color: var(--current-date-bg-color);
     color: #fe6e00;
+    color: var(--current-date-text-color);
     padding: 8px 18px;
 }
 
@@ -57,6 +72,7 @@ body{
 .calender-head{
     align-items: center;
     background-color: #fc5603;
+    background-color: var(--calendar-head-bg-color);
     display: flex;
     justify-content: space-between;
     padding: 25px 30px;
@@ -80,6 +96,7 @@ body{
 .week-days{
     align-content: center;
     background-color: #fe6e00;
+    background-color: var(--week-days-bg-color);
     display: grid;
     grid-template-columns: repeat(7, 100px);
     justify-items: center; 
@@ -92,6 +109,7 @@ body{
 .month-dates{
     align-content: center;
     background-color: #ffac42;
+    background-color: var(--month-dates-bg-color);
     display: grid;
     grid-template-columns: repeat(7, 100px);
     grid-template-rows: repeat(6, auto);
@@ -110,6 +128,7 @@ body{
 
 .inactive-date{
     color: #757676;
+    color: var(--inactie-date-color);
     padding: 20px 25px;
     
 }
@@ -117,8 +136,10 @@ body{
 .current-date{
     align-items: center;
     background-color: #fedebf;
+    background-color: var(--current-date-bg-color);
+    color: var(--current-date-text-color);
     border-radius: 50%;
-    color: #fe6e00;
+    /* color: #fe6e00; */
     display: flex;
     font-size: 18px;
     justify-content: center;
@@ -128,6 +149,7 @@ body{
 
 .sunday{
     color: #fe6e00;
+    color: var(--sunday-text-color);
     /* font-weight: 1000; */
     padding: 20px 25px;
 }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove Class</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <style>
+        .text{
+            font-size: 40px;
+            font-weight: 900;
+            color: yellow;
+        }
+
+        .toggle{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="div-1">Text 1 some text</div>
+    <div class="div-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, quos.</div>
+    <div class="div-3">toggle red and black text</div>
+
+    <button class="add-class">Add Class</button>
+    <button class="toggle-class">Toggle Class</button>
+
+    <script>
+        $(document).ready(function(){
+            $('.add-class').click(function(){
+                $('.div-1, .div-2').addClass('text');
+            }),
+            $('.toggle-class').click(function(){
+                $('.div-3').toggleClass('toggle');
+            })
+        })
+    </script>
+</body>
+</html>

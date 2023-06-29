@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+    <script>
+        // $('.box').hover(function(){
+        //     $(this).css('backgroundColor', 'green');
+        // })
+
+        $('.box').on({
+            mouseenter: function(){
+                $(this).css('backgroundColor', 'yellow');
+            },
+            mouseleave: function(){
+                $(this).css('backgroundColor', 'black')
+            },
+        })
+    </script>
+</body>
+</html>

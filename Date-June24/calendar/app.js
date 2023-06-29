@@ -1,5 +1,5 @@
 const day = document.getElementById('week-days');
-const date = document.getElementById('month-dates');
+const date = document.getElementById('month-date');
 const monthText = document.getElementById('month');
 const yearText = document.getElementById('year');
 const monthDropdown = document.getElementById('month-dropdown');
@@ -7,24 +7,20 @@ const yearDropdown = document.getElementById('year-dropdown');
 const showCurrentDate = document.getElementById('show-current-date');
 const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const monthArray = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const EMPTY = '';
+const body = document.querySelector('body');
 
-let startDate = EMPTY;
-let endDate = EMPTY;
+let startDate = '';
+let endDate = '';
 let incrementDecrementFlag = 0; //when you click on right arrow button it will increase and it will decrease when you click on left arrow button.
 let selectedMonth = new Date().getMonth();
 let selectedYear = new Date().getFullYear();
+let monthString = '';
+let checkFunctionCall = false;
 
-// function getMonthDifference(startDate, endDate) {
-//     let startYear = startDate.getFullYear();
-//     let startMonth = startDate.getMonth();
-//     let endYear = endDate.getFullYear();
-//     let endMonth = endDate.getMonth();
-
-//     let monthDifference = (endYear - startYear) * 12 + (endMonth - startMonth);
-
-//     return monthDifference;
-// }
+body.addEventListener('click', () => {
+    location.reload();
+    console.log(`reload`);
+});
 
 function addWeekDays() {
     let str = '';
@@ -53,39 +49,34 @@ let setYearsInDropdown = () => {
 }
 setYearsInDropdown();
 
-function addSunday(dateText) {
-    let div = document.createElement('div');
-    div.innerText = dateText;
-    div.classList.add('sunday', 'month-date');
-    //add id
-    div.id = `${dateText}`;
-    date.appendChild(div);
+function addSunday(dateText, month, year) {
+    if (dateText === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+        monthString += `<div class='current-date month-date sunday' id=${dateText}>${dateText}</div>`;
+    } else {
+        monthString += `<div class='month-date sunday' id=${dateText}>${dateText}</div>`;
+    }
+
+    date.innerHTML = monthString;
 }
 
 function addInactiveDate(dateText) {
-    let div = document.createElement('div');
-    div.innerText = dateText;
-    div.classList.add('inactive-date');
-    // div.id = `${dateText}`;
-    date.appendChild(div);
+    monthString += `<div class='inactive-date'>${dateText}</div>`;
+    date.innerHTML = monthString;
 }
 
 function addDate(dateText, month, year) {
-    let div = document.createElement('div');
-    div.innerText = dateText;
-    div.id = `${dateText}`;
-
     if (dateText === new Date().getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
-        div.classList.add('current-date', 'month-date');
+        monthString += `<div class='current-date month-date' id=${dateText}>${dateText}</div>`;
     } else {
-        div.classList.add('date-item', 'month-date');
+        monthString += `<div class='date-item month-date' id=${dateText}>${dateText}</div>`;
     }
 
-    date.appendChild(div);
+    date.innerHTML = monthString;
 }
 
 function addDateRangeClass(startDate, endDate) {
     // console.log(`Start Date ${startDate} / End Date : ${endDate} in addDateRangeClass function`);
+    checkFunctionCall = true;
     let min = +startDate < +endDate ? +startDate : +endDate;
     let max = +startDate > +endDate ? +startDate : +endDate;
     for (let i = min; i <= max; i++) {
@@ -100,30 +91,41 @@ function addDateRangeFeature() {
 
     let monthDate = document.querySelectorAll('.month-date');
     monthDate.forEach((dateItem) => {
-        dateItem.addEventListener('click', function () {
-            if (startDate === EMPTY && endDate === EMPTY) {
+        dateItem.addEventListener('click', function (event) {
+            if (startDate === '' && endDate === '') {
                 startDate = this.id;
-            } else if (endDate === EMPTY) {
+            } else if (endDate === '') {
                 endDate = this.id;
             }
-            
-            if (startDate !== EMPTY && endDate !== EMPTY) {
+
+            if (startDate !== '' && endDate !== '') {
                 addDateRangeClass(startDate, endDate);
             }
-            // console.log(`Start Date : ${startDate} / End date : ${endDate}`);
+            console.log(`click works`);
+            console.log(`Start Date : ${startDate} / End date : ${endDate}`);
+            if (checkFunctionCall) {
+                startDate = '';
+                endDate = '';
+
+                checkFunctionCall = false;
+            }
+
+            event.stopPropagation();
+            console.log(`Start Date : ${startDate} / End date : ${endDate}`);
         });
     });
 }
 
 function createCalender(selectedMonth = null, selectedYear = null) {
-    date.innerHTML = '';
-    startDate = EMPTY;
-    endDate = EMPTY;
+    monthString = '';
+    // date.innerHTML = '';
+    startDate = '';
+    endDate = '';
     let dt = new Date();
 
     if (selectedMonth !== null && selectedYear !== null) {
-        // startDate = EMPTY;
-        // endDate = EMPTY;
+        // startDate = '';
+        // endDate = '';
         if (isNaN(selectedMonth)) {
             dt = new Date(`${selectedMonth} 01, ${selectedYear}`);
         } else {
@@ -159,7 +161,7 @@ function createCalender(selectedMonth = null, selectedYear = null) {
             addInactiveDate(x);
             x++;
         } else if (i - sunday === 7 || i === 1) {
-            addSunday(i - firstDayOfMonth);
+            addSunday(i - firstDayOfMonth, month, year);
             sunday = i;
         } else {
             addDate(i - firstDayOfMonth, month, year);
@@ -172,12 +174,14 @@ function createCalender(selectedMonth = null, selectedYear = null) {
 }
 
 function initButtons() {
-    document.getElementById('next-button').addEventListener('click', () => {
+    document.getElementById('next-button').addEventListener('click', (event) => {
+        event.stopPropagation();
         incrementDecrementFlag++;
         createCalender();
     });
 
-    document.getElementById('back-button').addEventListener('click', () => {
+    document.getElementById('back-button').addEventListener('click', (event) => {
+        event.stopPropagation();
         incrementDecrementFlag--;
         createCalender();
     });
@@ -185,15 +189,15 @@ function initButtons() {
 
 function selectingMonthFunction(selectedMonth) {
     // incrementDecrementFlag = 0;
-    // startDate = EMPTY;
-    // endDate = EMPTY;
+    // startDate = '';
+    // endDate = '';
     createCalender(selectedMonth, selectedYear);
 }
 
 function selectingYearFunction(selectedYear) {
     // incrementDecrementFlag = 0;
-    // startDate = EMPTY;
-    // endDate = EMPTY;
+    // startDate = '';
+    // endDate = '';
     createCalender(selectedMonth, selectedYear);
 }
 
@@ -201,7 +205,8 @@ initButtons();
 createCalender();
 
 //show current date
-showCurrentDate.addEventListener('click', function () {
+showCurrentDate.addEventListener('click', function (event) {
+    event.stopPropagation();
     incrementDecrementFlag = 0;
     selectedMonth = new Date().getMonth();
     selectedYear = new Date().getFullYear();
@@ -209,17 +214,39 @@ showCurrentDate.addEventListener('click', function () {
 });
 
 //selecting month and year from dropdown list
-monthDropdown.addEventListener('change', function () {
+monthDropdown.addEventListener('change', function (event) {
+    event.stopImmediatePropagation();
     selectedMonth = monthDropdown.value;
     selectingMonthFunction(selectedMonth);
 });
 
-yearDropdown.addEventListener('change', function () {
+yearDropdown.addEventListener('change', function (event) {
+    event.stopImmediatePropagation();
     selectedYear = yearDropdown.value;
     selectingYearFunction(selectedYear);
 });
 
 
+// function handleChange(event) {
+//     // Your code here
+//     event.stopPropagation();
+//     selectedMonth = monthDropdown.value;
+//     selectingMonthFunction(selectedMonth);
+//     // Remove the event listener
+//     event.currentTarget.removeEventListener('change', handleChange);
+// }
+
+// function handleYearChange(event) {
+//     // Your code here
+//     event.stopPropagation();
+//     selectedYear = yearDropdown.value;
+//     selectingYearFunction(selectedYear);
+//     // Remove the event listener
+//     event.currentTarget.removeEventListener('change', handleChange);
+// }
+
+// monthDropdown.addEventListener('change', handleChange);
+// monthDropdown.addEventListener('change', handleYearChange);
 
 
 

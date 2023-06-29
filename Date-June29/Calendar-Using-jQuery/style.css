@@ -1,0 +1,67 @@
+:root{
+    --calendar-head-bg-color:#738b7e;
+    --text-color:#ffffff;
+    --week-and-month-container-bg-color:#9abba8;
+    --dropdown-list-bg-colro:#c2d7cb;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.calendar-body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    
+}
+
+.calendar-head{
+    align-items: center;
+    background-color: var(--calendar-head-bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-around;
+}
+
+.week-and-month-container{
+    background-color: var(--week-and-month-container-bg-color);
+}
+
+.week-days{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+}
+
+.month-date .month-row-1, .month-row-2, .month-row-3, .month-row-4, .month-row-5, .month-row-6{
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+}
+
+.dropdown-list{
+    background-color: var(--dropdown-list-bg-colro);
+}
+
+.sunday{
+    color: rgb(194, 242, 196);
+}
+
+.inactive-date{
+    color: #a7a6a6;
+}
+
+.current-date{
+    background-color: #ffffff;
+    color: black;
+}

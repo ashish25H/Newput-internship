@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery click event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <p>Click on me</p>
+    <p>Hidden on click</p>
+    <p class="test">test</p>
+
+    <script>
+        $(document).ready(function () {
+            $('p').click(function () {
+                $(this).hide();
+            })
+
+            $("p.test").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "red");
+                }
+            });
+        })
+
+
+    </script>
+</body>
+
+</html>
