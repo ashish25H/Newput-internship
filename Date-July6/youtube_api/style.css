@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 50px 200px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+}
+
+#input-text{
+    width: 100%;
+}
+
+form input{
+    margin-bottom: 20px;
+    padding: 10px;
+    outline: none;
+}
+
+form button{
+    margin-bottom: 20px;
+}
+
+.card-img-top{
+    margin-top: 15px;
+}
