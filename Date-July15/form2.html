@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 2</title>
+
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: aqua;
+            width: 22vw;
+        }
+
+        form input {
+            width: 80%;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        form div {
+            display: flex;
+            margin: 10px 0;
+        }
+    </style>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form id="myform">
+        <input type="text" name="name" id="name" placeholder="Enter Name">
+        <input type="email" name="email" id="email" placeholder="Enter your email">
+        <input type="number" name="age" id="age" placeholder="Enter your age">
+        <!-- <input type="password" name="password" id="password" placeholder="Enter your password"> -->
+        <div>
+            <label for="gender">Male
+                <input type="radio" name="gender" id="gender">
+            </label>
+            <label for="gender">
+                Female
+                <input type="radio" name="gender" id="gender">
+            </label>
+        </div>
+
+        <div>
+            <label for="temrs">
+                Plese accept our terms and conditions:
+            </label>
+            <input type="checkbox" name="terms" id="terms">
+        </div>
+
+        <label for="password">
+            Enter password :
+            <input type="text" name="password" id="password">
+        </label>
+
+        <label for="conpassword">
+            Confirm password :
+            <input type="text" name="conpassword" id="conpassword">
+        </label>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    <script>
+
+        $('#myform').validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 4,
+                },
+                email: {
+                    required: true,
+                    email: true,
+                },
+                age: {
+                    required: 'true',
+                    range: [10, 50],
+                },
+                gender: {
+                    required: true,
+                },
+                terms: {
+                    required: true,
+                },
+                password: {
+                    required: true,
+                },
+                conpassword: {
+                    required: true,
+                    equalTo: '#password',
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Please enter your name',
+                    minlength: 'Name should we more then 4 characters',
+                },
+                email: {
+                    required: 'Please enter you email id',
+                    email: 'Enter a valid email id',
+                },
+                age: {
+                    required: 'Enter your phone number your number will be your ID',
+                    range: 'You must be between 10 to 50',
+                },
+                gender: {
+                    required: 'Plese select you gender',
+                },
+                terms: {
+                    required: 'Please accept our terms and conditions',
+                },
+                conpassword: {
+                    equalTo: 'Please enter the same password',
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
