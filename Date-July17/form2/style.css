@@ -1,0 +1,15 @@
+.error{
+    padding-left: 30px;
+    color: red;
+}
+
+body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+form{
+    width: 40vw;
+    margin: 0 auto 0 auto;
+}
