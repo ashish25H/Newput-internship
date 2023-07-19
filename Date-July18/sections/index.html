@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul id="list"></ul>
+    <ul id="list2"></ul>
+    <ul id="list3"></ul>
+
+    <script id="template" type="x-tmpl-mustache">
+        {{#google}}
+        <li>{{name}}</li>
+        {{/google}}
+    </script>
+    <script id="template2" type="x-tmpl-mustache">
+        {{#musketeers}}
+        * {{.}}<br>
+        {{/musketeers}}
+    </script>
+    <script id="template3" type="x-tmpl-mustache">
+        {{#beatles}}
+        *{{name}}<br>
+        {{/beatles}}
+    </script>
+
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script>
+        const template = document.getElementById('template').innerHTML;
+        const template2 = document.getElementById('template2').innerHTML;
+        const template3 = document.getElementById('template3').innerHTML;
+
+        const users = {
+            google: [
+                { name: 'Tony' },
+                { name: 'Thor' },
+                { name: 'Caption' },
+            ]
+        }
+        const data = {
+            "musketeers": ["Athos", "Aramis", "Porthos", "D'Artagnan"]
+        }
+       const fullName = {
+            "beatles" : [
+                { "firstName": "John", "lastName": "Lennon" },
+                { "firstName": "Paul", "lastName": "McCartney" },
+                { "firstName": "George", "lastName": "Harrison" },
+                { "firstName": "Ringo", "lastName": "Starr" }
+            ],
+            "name" : function () {
+                    return this.firstName + " " + this.lastName;
+                }
+        }
+
+        const render = Mustache.render(template, users);
+        console.log(render);
+        document.getElementById('list').innerHTML = render;
+
+        document.getElementById('list2').innerHTML = Mustache.render(template2, data);
+
+        document.getElementById('list3').innerHTML = Mustache.render(template3, fullName)
+    </script>
+</body>
+
+</html>

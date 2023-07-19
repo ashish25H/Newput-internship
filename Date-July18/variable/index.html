@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="target"></div>
+
+    <div id="details"></div>
+    
+    <script id="template" type="x-tmpl-mustache">
+        Hello my name is {{name}} and I am working in {{company}}.
+
+        {{firstName}} {{lastName}} {{birthPlace}} {{power}}.
+    </script>
+    
+    <script id="thor" type="x-tmpl-mustache">
+        {{firstName}} {{lastName}} {{birthPlace}} {{power}}.
+    </script>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script>  
+        const data = {
+            name : 'Tony',
+            company : 'Stark Ind',
+        }
+
+        const user = {
+            name : {
+                firstName : 'Thor',
+                lastName : 'Odin',
+            },
+            birthPlace : 'Asgard',
+            power : 'Thunder',
+        }
+
+        const template = document.getElementById('template').innerHTML;
+        const render = Mustache.render(template, {name : data.name, company : data.company});
+        document.getElementById('target').innerHTML = render;
+
+        const thorTemplate = document.getElementById('thor').innerHTML;
+        const renderPower = Mustache.render(thorTemplate, {firstName : user.name.firstName, lastName : user.name.lastName, birthPlace : user.birthPlace, power : user.power});
+        document.getElementById('details').innerHTML = renderPower;
+
+
+    </script>
+
+</body>
+</html>

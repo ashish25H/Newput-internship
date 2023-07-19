@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="renderHello()">
+    <div id="target">Loading...</div>
+    
+    <script id="template" type="x-tmpl-mustache">
+      Hello {{ name }}!
+    </script>
+
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="render.js"></script>
+
+    <script>
+        // file: render.js
+
+        function renderHello() {
+            const template = document.getElementById('template').innerHTML;
+            const rendered = Mustache.render(template, { name: 'Luke' });
+            document.getElementById('target').innerHTML = rendered;
+        }
+    </script>
+</body>
+
+</html>
